@@ -1,0 +1,28 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.5.2
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = lakposht.o
+LINKOBJ  = lakposht.o
+LIBS     = -L"C:/Users/Amir/Downloads/dev/Dev.C.Plus.Plus.v5.5.2.MinGW.v4.7.2.Portable_p30download.com/MinGW32/lib" -L"C:/Users/Amir/Downloads/dev/Dev.C.Plus.Plus.v5.5.2.MinGW.v4.7.2.Portable_p30download.com/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"C:/Users/Amir/Downloads/dev/Dev.C.Plus.Plus.v5.5.2.MinGW.v4.7.2.Portable_p30download.com/MinGW32/include"
+CXXINCS  = -I"C:/Users/Amir/Downloads/dev/Dev.C.Plus.Plus.v5.5.2.MinGW.v4.7.2.Portable_p30download.com/MinGW32/include" -I"C:/Users/Amir/Downloads/dev/Dev.C.Plus.Plus.v5.5.2.MinGW.v4.7.2.Portable_p30download.com/MinGW32/lib/gcc/mingw32/4.7.2/include/c++"
+BIN      = Project1.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+lakposht.o: lakposht.cpp
+	$(CPP) -c lakposht.cpp -o lakposht.o $(CXXFLAGS)
